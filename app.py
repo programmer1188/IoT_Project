@@ -23,7 +23,7 @@ def predict():
         
         prediction=model.predict([[Temperature,Humidity,SoilMoisture]])
         output=prediction[0]
-        if output==0:
+        if output<1:
             return render_template('index.html',prediction_text="Turn off the Motor")
         else:
             return render_template('index.html',prediction_text="Turn on the Motor".format(output))
