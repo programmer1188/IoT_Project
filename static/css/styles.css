@@ -1,0 +1,25 @@
+body {
+    background-color: #e1f4f3;
+    text-align: center;
+}
+
+div {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.navbar {
+    	background-color: #333333;	
+}
+
+a {
+    color: #f1f9f9;
+	text-align: center;
+}
+
+a:hover {
+    color: #f0f0f0;
+	text-align: center;
+  }

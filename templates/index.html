@@ -4,135 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IOT PROJECT</title>
+
+     <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
 <body>
 
-    <div style="color:blue">
-        <form action="{{ url_for('predict')}}" method="post">
-            <h2>Prediction for Water Management analysis</h2>
-            <h3>Soil Moisture</h3>
-            <input id="first" name="SoilMoisture" type="number ">
-            <h3>Temperature</h3><br><input id="second" name="Temperature" required="required">
-            <h3>Humidity</h3><input id="third" name="Humidity" required="required">
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">AGRICULRUTAL IOT</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+    <div class="container">
+        <form class="text-center border border-light p-5" action="\predict" method="post">
+             <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">SOIL MOISTURE</h5>
+                            <!-- Departure -->
             
-            <br><br><button id="sub" type="submit ">Submit</button>
-            <br>
+            <input id="first" name="SoilMoisture" type="number ">
+        </div>
+        </div>
+        </div>
+        <br><br>
+         <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">TEMPERATURE</h5>
+            <input id="second" name="Temperature" required="required">
+
+            </div>
+            </div>
+            </div>
+        </div>
+            <br><br>
+
+            <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">HUMIDITY</h5>
+            <input id="third" name="Humidity" required="required">
+
+            </div>
+        </div>
+    </div>
+</div>
+            
+            <br><br><button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" id="sub" type="submit ">Submit</button>
 
         </form>
 
 
 
-        <br><br><h3>{{ prediction_text }}<h3>
+        <br><br><h3>{{ prediction_text }}</h3>
     </div>
 
 
 
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 
-    <style>
-        body {
-            background-color: lightslategray;
-            text-align: center;
-            padding: 0px;
-        }
-        
-        #research {
-            font-size: 18px;
-            width: 100px;
-            height: 23px;
-            top: 23px;
-        }
-        
-        #box {
-            border-radius: 60px;
-            border-color: 45px;
-            border-style: solid;
-            font-family: cursive;
-            text-align: center;
-            background-color: rgb(168, 131, 61);
-            font-size: medium;
-            position: absolute;
-            width: 700px;
-            bottom: 9%;
-            height: 850px;
-            right: 30%;
-            padding: 0px;
-            margin: 0px;
-            font-size: 14px;
-        }
-        
-        #fuel {
-            width: 83px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 20px;
-        }
-        
-        #fuel:hover {
-            background-color: coral;
-        }
-        
-        #research {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #research:hover {
-            background-color: coral;
-        }
-        
-        #resea {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #resea:hover {
-            background-color: coral;
-        }
-        
-        #sub {
-            width: 120px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #sub:hover {
-            background-color: darkcyan;
-        }
-        
-        #first {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #second {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #third {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        
-    </style>
+
 </body>
 
 </html>
